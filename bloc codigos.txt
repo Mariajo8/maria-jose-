@@ -1,0 +1,291 @@
+public class Main
+{
+	public static void main(String[] args) {
+
+        int costoFijo = 800;
+        int costoVariable = 20; 
+        int costoDeseado = 25; 
+
+        int cantidadMinima = (costoFijo / (costoDeseado - costoVariable)); 
+                int produccionMensual = cantidadMinima * 30; 
+
+
+        System.out.println("Cantidad mínima de sombreros a producir diariamente: " + cantidadMinima);
+        System.out.println("Producción mínima mensual: " + produccionMensual);
+    
+}
+}
+   
+..................................................................
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese un número: ");
+        int num = scanner.nextInt();
+
+        
+        if (num <= 0) {
+            System.out.println("No es especial");
+        } else if (num % 3 != 0) {
+            System.out.println("No es especial");
+        } else if (num % 100 == 0 && num % 300 != 0) {
+            System.out.println("No es especial");
+        } else {
+            System.out.println("Es especial");
+        }
+        
+    }
+}
+
+
+
+...............................................................
+
+
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sumaPuntos = 0;
+
+        System.out.println("Ingrese 20 números de la ficha:");
+
+        for (int i = 0; i < 20; i++) {
+            int numero = scanner.nextInt();
+            sumaPuntos += calculaPuntos(numero);
+        }
+
+        if (sumaPuntos > 70) {
+            System.out.println("¡Es una ficha ganadora!");
+        } else {
+            System.out.println("No es una ficha ganadora.");
+        }
+
+    }
+
+    
+}
+
+............................................................
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese el número de la ficha (6 a 7 dígitos): ");
+        String numeroFicha = scanner.nextLine();
+        
+        if (numeroFicha.length() < 6 || numeroFicha.length() > 7) {
+            System.out.println("Número inválido");
+            scanner.close();
+            return;
+        }
+                if (esNumeroEspejo(numeroFicha)) {
+            System.out.println("Te tocó ir a las clases presenciales");
+        } else {
+            System.out.println("Te quedas en casita, ¡pero a estudiar!");
+        }
+
+
+............................................................
+
+
+    .Declaramos un num de forma entra que sera 9 
+    .usamos una condicional con un ciclo "while"lo cual num debe ser mayor a 0
+    .si el num es divisible a 2 es par y si no es impar 
+    .al resultado que salga le restamos 3
+    .el resultado seria 1.5
+
+
+...............................................................
+
+
+
+public class Main
+{
+	public static void main(String[] args) {
+
+        for (int edad = 10; edad <= 17; edad++) {
+            if (edad % 5 == 0 && edad % 2 != 0) {
+                grupo1.add(edad); 
+                
+            } else if (edad % 4 == 0) {
+                grupo2.add(edad); 
+            } 
+   
+else if (edad % 3 == 0 && edad % 4 != 0 && edad % 5 != 0 && edad % 2 != 0) {
+                grupo3.add(edad); 
+                            
+
+        System.out.println("Grupo 1 (Múltiplo de 5 pero no de 2): " + grupo1 );
+        System.out.println("Grupo 2 (Múltiplo de 4): " + grupo2);
+        System.out.println("Grupo 3 (Múltiplo de 3 pero no de 4, 5 ni 2): " + grupo3);
+        System.out.println("Grupo 4 (Resto): " + grupo4);	}
+
+}
+}
+}
+
+...............................................................
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el salario anual del empleado: ");
+        double salarioAnual = scanner.nextDouble();
+
+        System.out.print("Ingrese los puntos acumulados: ");
+        int puntos = scanner.nextInt();
+
+        double bonificacion = 0;
+
+        if (puntos < 50) {
+            System.out.println("No recibe bonificación.");
+        } else if (puntos >= 50 && puntos < 100) {
+            bonificacion = salarioAnual * 0.05;
+            System.out.println("Bonificación: " + bonificacion + " Bs.");
+        } else if (puntos >= 100) {
+            bonificacion = (salarioAnual * 0.10) + 500;
+            System.out.println("Bonificación: " + bonificacion + " Bs.");
+        }
+
+    }
+}
+.............................................................
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] notas = new double[10];
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Ingrese la nota del estudiante " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+        }
+
+        System.out.println("Notas ingresadas:");
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Estudiante " + (i + 1) + ": " + notas[i]);
+        }
+
+        double suma = 0;
+        double notaMaxima = notas[0];
+        double notaMinima = notas[0];
+
+        for (int i = 0; i < 10; i++) {
+            suma += notas[i];
+            if (notas[i] > notaMaxima) {
+                notaMaxima = notas[i];
+            }
+            if (notas[i] < notaMinima) {
+                notaMinima = notas[i];
+            }
+        }
+
+        double promedio = suma / 10;
+
+        System.out.println("Promedio de notas: " + promedio);
+        System.out.println("Nota más alta: " + notaMaxima);
+        System.out.println("Nota más baja: " + notaMinima);
+
+    }
+}
+
+
+..............................................................................
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        double costoBicicleta = 1200; 
+        double ahorroActual = 250; 
+        double ahorroPorSemana = 25; 
+        int semanas = 0; 
+
+        while (ahorroActual < costoBicicleta) {
+            ahorroActual += ahorroPorSemana; 
+            semanas++; 
+        }
+
+        System.out.println("María necesita ahorrar durante " + semanas + " semanas para comprar la bicicleta.");
+    }
+}
+
+
+
+..............................................................................
+
+
+
+public class main {
+    public static void main(String[] args) {
+        double precioTotal = 3500; 
+        double pagoInicial = 500;   
+        double saldoRestante = precioTotal - pagoInicial; 
+        int meses = 0; 
+        while (saldoRestante > 100) {
+            double pagoMensual = saldoRestante * 0.15; 
+            saldoRestante -= pagoMensual; 
+            meses++; 
+        }
+
+        saldoRestante = 0; 
+        System.out.println("Total de meses para pagar la laptop: " + meses);
+        System.out.println("Pago final realizado para saldar la deuda de 100 Bs o menos.");
+    }
+}
+
+
+.....................................................................................
+
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la hora alemana (HH:MM): ");
+        String horaAlemania = scanner.nextLine();
+        
+        String[] partes = horaAlemania.split(":");
+        int horasAlemanas = Integer.parseInt(partes[0]);
+        int minutosAlemanes = Integer.parseInt(partes[1]);
+
+        int totalMinutosAlemanes = (horasAlemanas * 60) + minutosAlemanes;
+
+        int totalMinutosBolivianos = totalMinutosAlemanes - (6 * 60);
+
+        int horasBolivianas = totalMinutosBolivianos / 60;
+        int minutosBolivianos = totalMinutosBolivianos % 60;
+
+        if (horasBolivianas < 0) {
+            horasBolivianas += 24;
+        }
+
+      System.out.printf("La hora boliviana es:" horasBolivianas, minutosBolivianos);
+
+    }
+}
+
